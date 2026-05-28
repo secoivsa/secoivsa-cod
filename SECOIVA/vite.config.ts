@@ -15,4 +15,12 @@ export default defineConfig({
     outDir: "dist/client",
     emptyOutDir: true,
   },
+
+  optimizeDeps: {
+    exclude: ["@tanstack/start-storage-context"],
+  },
+
+  ssr: {
+    noExternal: ["@tanstack/start-storage-context"],
+  },
 });
