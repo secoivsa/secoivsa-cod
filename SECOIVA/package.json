@@ -6,7 +6,7 @@
 
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build --ssr false",
+    "build": "vite build --ssr src/server.ts",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint .",
