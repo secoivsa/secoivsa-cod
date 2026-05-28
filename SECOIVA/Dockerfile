@@ -8,6 +8,8 @@ RUN npm install
 
 RUN npm run build
 
+RUN npm install -g serve
+
 EXPOSE 3000
 
-CMD ["node", "dist/server/index.mjs"]
+CMD ["serve", "-s", "dist/client", "-l", "3000"]
