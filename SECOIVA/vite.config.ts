@@ -1,15 +1,9 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import tsConfigPaths from "vite-tsconfig-paths";
-import { TanStackRouterVite } from "@tanstack/router-plugin/vite";
 import path from "path";
 
 export default defineConfig({
-  plugins: [
-    TanStackRouterVite(),
-    react(),
-    tsConfigPaths(),
-  ],
+  plugins: [react()],
 
   resolve: {
     alias: {
@@ -20,5 +14,13 @@ export default defineConfig({
   build: {
     outDir: "dist/client",
     emptyOutDir: true,
+  },
+
+  optimizeDeps: {
+    exclude: ["@tanstack/start-storage-context"],
+  },
+
+  define: {
+    "process.env": {},
   },
 });
