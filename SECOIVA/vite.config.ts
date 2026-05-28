@@ -6,4 +6,12 @@ export default defineConfig({
   build: {
     outDir: "dist/client",
   },
+  resolve: {
+    alias: {
+      "@": "/src",
+    },
+  },
+  ssr: {
+    noExternal: ["@tanstack/start-storage-context"],
+  },
 });
